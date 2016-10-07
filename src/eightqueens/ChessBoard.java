@@ -9,21 +9,30 @@ package eightqueens;
  *
  * @author Daniel
  */
-
-
 public class ChessBoard {
-   private final Tile[][] tiles;
-   
-   public ChessBoard(int size){
-       tiles = new Tile[size][size];
-   }
-   
-   public Tile[][] getTiles(){
-       return this.tiles;
-   }
-   
-   public int getSize(){
-       return this.tiles.length;
-   }
-   
+
+    private final Tile[][] tiles;
+
+    public ChessBoard(int size) {
+        tiles = new Tile[size][size];
+    }
+
+    public void solveProblem() {
+        System.out.println("Solving Eight Queens Problem");
+        System.out.println("Size of board is " + getSize());
+    }
+    
+    public boolean checkPosition(Queen[] queens){
+        //For every queen, check if
+        return false;
+    }
+
+    public Tile[][] getTiles() {
+        return this.tiles;
+    }
+
+    public int getSize() {
+        return this.tiles.length;
+    }
+
 }
