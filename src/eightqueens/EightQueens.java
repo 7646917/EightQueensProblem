@@ -18,39 +18,36 @@ import javafx.stage.Stage;
  * @author Daniel
  */
 public class EightQueens extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) {
         ChessBoard chessBoard = new ChessBoard(10);
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("Solve Eight Queens Problem");
         btn.setOnAction(new EventHandler<ActionEvent>() {
-            
+
             @Override
             public void handle(ActionEvent event) {
-                System.out.println(chessBoard.getSize());
+                chessBoard.solveProblem();
             }
         });
-        
+
         StackPane root = new StackPane();
         root.getChildren().add(btn);
-        
+
         Scene scene = new Scene(root, 300, 250);
-        
+
         primaryStage.setTitle("Eight Queens Problem");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
     
-    public static void setupBoard(){
-    }
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
-       
+
     }
-    
+
 }
