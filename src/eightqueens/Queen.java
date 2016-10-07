@@ -25,6 +25,14 @@ public class Queen {
         return this.position;
     }
     
+    public int getPosX(){
+        return this.position.getBoardX();
+    }
+    
+    public int getPosY(){
+        return this.position.getBoardY();
+    }
+    
     public void setPosition(Tile newPos){
         this.position = newPos;
     }

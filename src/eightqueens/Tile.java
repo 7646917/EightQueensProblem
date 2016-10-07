@@ -43,7 +43,10 @@ public class Tile {
     public boolean getOccupied() {
         return this.occupied;
     }
-
+    
+    public String getPosition(){
+        return this.boardX + "," + this.boardY;
+    }
     public String getColor() {
         return this.color;
     }
