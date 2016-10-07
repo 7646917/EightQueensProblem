@@ -14,8 +14,14 @@ public class Tile {
     String color;
     boolean occupied = false;
     int boardX, boardY; //Where it is on the chessboard.
-    int posX, posY; //Position on the frame
-
+    //int posX, posY; //Position on the frame
+    
+    /**
+     * 
+     * @param color
+     * @param boardX
+     * @param boardY 
+     */
     public Tile(String color, int boardX, int boardY) {
         this.color = color;
         this.boardX = boardX;

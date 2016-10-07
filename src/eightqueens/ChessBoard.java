@@ -5,18 +5,57 @@
  */
 package eightqueens;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Daniel
  */
 public class ChessBoard {
 
-    private final Tile[][] tiles;
-    private final Queen[] queens;
+    private Tile[][] tiles;
+    private final ArrayList<Queen> queens;
+    private final int numOfQueens = 8;
 
-    public ChessBoard(int size, Queen[] queens) {
+    public ChessBoard(int size, ArrayList<Queen> queens) {
         tiles = new Tile[size][size];
         this.queens = queens;
+        createTiles();
+    }
+
+    public ChessBoard(int size) {
+        tiles = new Tile[size][size];
+        queens = new ArrayList<>();
+        createTiles();
+    }
+
+    public void createTiles() {
+        for (int i = 0; i < tiles.length; i++) {
+            for (int z = 0; z < tiles.length; z++) {
+                Tile t = new Tile("White", i, z);
+                tiles[i][z] = t;
+            }
+        }
+    }
+
+    public void createQueens() {
+        for (int i = 0; i < numOfQueens; i++) {
+            queens.add(new Queen());
+        }
+    }
+
+    public void placeQueens() {
+        //Place the queens on the chessboard
+        for (int i = 0; i < numOfQueens; i++) {
+            Queen q = queens.get(i);
+            q.setPosition(tiles[0][i]);
+        }
+    }
+
+    public void printPositions() {
+        for (Queen q : queens) {
+            System.out.println("Queen at: " + q.getPositionString());
+        }
     }
 
     public void solveProblem() {
@@ -25,15 +64,15 @@ public class ChessBoard {
 
         System.out.println("A possible solution is: ");
 
-        for (String s : checkPosition()) {
-            System.out.println("Queen at: " + s);
-        }
+        findPositions();
+        printPositions();
+
     }
 
-    public String[] checkPosition() {
-        //For every queen, check if
-        String[] result = new String[8];
-        
+    public void findPositions() {
+        createQueens(); //Creates 8
+        placeQueens(); //Sets each one at a unique column.
+
         /*
     If 
         all queens are placed return true and print the solution matrix.
@@ -45,9 +84,6 @@ public class ChessBoard {
         If all the rows are tried and noth­ing worked, return false and print NO SOLUTION
         
          */
-        
-
-        return result;
     }
 
     public Tile[][] getTiles() {

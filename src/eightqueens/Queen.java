@@ -14,6 +14,7 @@ public class Queen {
     private Tile position;
     
     public Queen(){
+        this.position = new Tile("White",0,0);
     }
     
     public Queen(Tile position){
@@ -22,6 +23,14 @@ public class Queen {
     
     public Tile getPosition(){
         return this.position;
+    }
+    
+    public void setPosition(Tile newPos){
+        this.position = newPos;
+    }
+    
+    public String getPositionString(){
+        return this.position.getBoardX() + "," + this.position.getBoardY();
     }
     
     

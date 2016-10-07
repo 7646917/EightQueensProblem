@@ -21,7 +21,8 @@ public class EightQueens extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        ChessBoard chessBoard = new ChessBoard(10);
+        int size = 8;
+        ChessBoard chessBoard = new ChessBoard(size);
         Button btn = new Button();
         btn.setText("Solve Eight Queens Problem");
         btn.setOnAction(new EventHandler<ActionEvent>() {
